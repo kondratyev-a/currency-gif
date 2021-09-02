@@ -4,7 +4,7 @@ plugins {
     id 'java'
 }
 
-group = 'com.currecy.kondratyev'
+group = 'com.currency.kondratyev'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -17,10 +17,10 @@ ext {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.4'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:3.0.3'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.5.4'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.4'
 }
 
 dependencyManagement {

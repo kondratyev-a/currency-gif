@@ -34,7 +34,6 @@ public class CurrencyGifService {
         LocalDate yesterday = today.minusDays(1);
         BigDecimal yesterdayRate = currencyService.getRateByCurrencyAndDate(currency, yesterday);
 
-        // TODO Проверить условие
         boolean rateIncreased = (todayRate.compareTo(yesterdayRate) > 0);
         logger.info((rateIncreased ? "Rate increased" : "Rate decreased"));
 

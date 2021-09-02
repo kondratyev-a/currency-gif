@@ -2,17 +2,17 @@ package com.currency.kondratyev.currencygif.responses;
 
 public class CurrencyResponse {
 
-    private String responce;
+    private String response;
 
-    public CurrencyResponse(String responce) {
-        this.responce = responce;
+    public CurrencyResponse(String response) {
+        this.response = response;
     }
 
-    public String getResponce() {
-        return responce;
+    public String getResponse() {
+        return response;
     }
 
-    public void setResponce(String responce) {
-        this.responce = responce;
+    public void setResponse(String response) {
+        this.response = response;
     }
 }

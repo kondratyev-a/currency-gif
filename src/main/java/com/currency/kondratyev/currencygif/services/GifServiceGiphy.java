@@ -41,4 +41,8 @@ public class GifServiceGiphy implements GifService {
 
         return gifUrl;
     }
+
+    public void setIMAGE_PATH(String IMAGE_PATH) {
+        this.IMAGE_PATH = IMAGE_PATH;
+    }
 }
