@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 
-@FeignClient(name = "currency-service", url = "https://openexchangerates.org/api/")
+@FeignClient(name = "currency-service", url = "${openexchangerates.url}")
 public interface OERExternal {
 
     @GetMapping("historical/{date}.json")

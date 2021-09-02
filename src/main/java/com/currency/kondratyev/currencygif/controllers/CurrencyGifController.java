@@ -22,6 +22,14 @@ public class CurrencyGifController {
         this.service = service;
     }
 
+    @GetMapping({"/", "/index"})
+    public String showWebPage(@RequestParam(defaultValue = "${main.currency}") String currency, Model model) {
+
+        logger.info("Called html version with currency {}", currency);
+        model.addAttribute("url", service.getGifUrlByCurrency(currency));
+        return "index";
+    }
+
     @GetMapping(value = "/rest")
     @ResponseBody
     public ResponseEntity<CurrencyResponse> showJson(@RequestParam(defaultValue = "${main.currency}") String currency) {
@@ -35,14 +43,6 @@ public class CurrencyGifController {
 
         logger.info("Called redirect version with currency {}", currency);
         return new ModelAndView("redirect:" + service.getGifUrlByCurrency(currency));
-    }
-
-    @GetMapping({"/", "/index", "/{currency}", "/index/{currency}"})
-    public String showWebPage(@RequestParam(defaultValue = "${main.currency}") String currency, Model model) {
-
-        logger.info("Called html version with currency {}", currency);
-        model.addAttribute("url", service.getGifUrlByCurrency(currency));
-        return "index";
     }
 
 }

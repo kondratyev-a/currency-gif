@@ -27,6 +27,7 @@ public class CurrencyGifService {
     }
 
     public String getGifUrlByCurrency(String currency) {
+
         LocalDate today = LocalDate.now();
         BigDecimal todayRate = currencyService.getRateByCurrencyAndDate(currency, today);
 
@@ -34,7 +35,7 @@ public class CurrencyGifService {
         BigDecimal yesterdayRate = currencyService.getRateByCurrencyAndDate(currency, yesterday);
 
         // TODO Проверить условие
-        boolean rateIncreased = (todayRate.compareTo(yesterdayRate) < 0);
+        boolean rateIncreased = (todayRate.compareTo(yesterdayRate) > 0);
         logger.info((rateIncreased ? "Rate increased" : "Rate decreased"));
 
         String tag = (rateIncreased ? RICH : BROKE);
