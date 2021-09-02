@@ -4,6 +4,7 @@ import com.currency.kondratyev.currencygif.externals.OERExternal;
 import com.currency.kondratyev.currencygif.responses.OERCurrencyResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -12,9 +13,11 @@ import java.time.LocalDate;
 @Service
 public class CurrencyServiceOER implements CurrencyService {
 
-    // TODO убрать в параметры
-    private static final String APP_ID = "8727bfba259c45c78b7a20af0a014378";
-    private static final String BASE = "USD";
+    @Value("${openexchangerates.app_id}")
+    private String APP_ID;
+
+    @Value("${main.base}")
+    private String BASE;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private final OERExternal oerExternal;

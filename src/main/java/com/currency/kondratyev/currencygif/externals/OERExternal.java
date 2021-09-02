@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public interface OERExternal {
 
     @GetMapping("historical/{date}.json")
-    OERCurrencyResponse getRate(@PathVariable("date") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date,
+        OERCurrencyResponse getRate(@PathVariable("date") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date,
                                 @RequestParam(name = "app_id") String appId,
                                 @RequestParam(name = "base") String base,
                                 @RequestParam(name = "symbols") String symbols);

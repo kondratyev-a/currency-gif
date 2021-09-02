@@ -5,13 +5,17 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class GifServiceGiphy implements GifService {
 
-    // TODO убрать в параметры
-    private static final String API_KEY = "pIJan1zxTSXuNRz3xHfIlm3JvazT8WhI";
+    @Value("${giphy.api_key}")
+    private String API_KEY;
+
+    @Value("${giphy.image_path}")
+    private String IMAGE_PATH;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private final GiphyExternal giphyExternal;
@@ -29,7 +33,7 @@ public class GifServiceGiphy implements GifService {
         ObjectMapper mapper = new ObjectMapper();
         try {
             JsonNode root = mapper.readTree(response);
-            gifUrl = root.at("/data/image_url").asText();
+            gifUrl = root.at(IMAGE_PATH).asText();
         }
         catch(Exception e) {
             logger.error("Exception on parsing response {}", e.getMessage());
