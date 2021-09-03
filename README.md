@@ -35,6 +35,9 @@ cd currency-gif
 docker run -p 8080:8080 alexeykondratyev/currency-gif
 ```
 
+### Запуск через Heroku
+Запустить [https://currency-gif.herokuapp.com/](https://currency-gif.herokuapp.com/)
+
 ## Использование
 Запустить в браузере [localhost:8080/](localhost:8080/).
 По умолчанию проверятся курс доллара по отношению к рублю.
