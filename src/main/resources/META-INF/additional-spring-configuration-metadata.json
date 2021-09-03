@@ -1,0 +1,48 @@
+{
+  "properties": [
+    {
+      "name": "giphy.image_path",
+      "type": "java.lang.String",
+      "description": "The path to the gif url that we need to get from a giphy response."
+    },
+    {
+      "name": "giphy.url",
+      "type": "java.lang.String",
+      "description": "Url for Giphy API."
+    },
+    {
+      "name": "giphy.api_key",
+      "type": "java.lang.String",
+      "description": "Api key for Giphy."
+    },
+    {
+      "name": "openexchangerates.url",
+      "type": "java.lang.String",
+      "description": "Url for Open Exchange Rates API."
+    },
+    {
+      "name": "openexchangerates.app_id",
+      "type": "java.lang.String",
+      "description": "App IDs for Open Exchange Rates API."
+    },
+    {
+      "name": "main.currency",
+      "type": "java.lang.String",
+      "description": "The currecy to get exchange rate."
+    },
+    {
+      "name": "main.base",
+      "type": "java.lang.String",
+      "description": "The base currency."
+    },
+    {
+      "name": "main.broke",
+      "type": "java.lang.String",
+      "description": "Word to request gif when exchange rate decreased."
+    },
+    {
+      "name": "main.rich",
+      "type": "java.lang.String",
+      "description": "ord to request gif when exchange rate increased."
+    }
+  ] }
